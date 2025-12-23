@@ -1,0 +1,11 @@
+load_from:
+  # Each entry here corresponds to a service in the docker-compose file that exposes user code.
+  - grpc_server:
+      host: afto_etl_repo
+      port: 4000
+      location_name: "afto_etl_repo"
+load_from:
+  - python_module:
+      module_name: repo
+      working_directory: ./repository
+      attribute: deploy_docker_repository
